@@ -13,3 +13,10 @@
 * deadbeef
 * sublime text 2
 * firefox
+* mendeley
+* skype
+* wps
+* zim
+* dropbox
+* inkscape
+* smplayer
