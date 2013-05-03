@@ -1,0 +1,59 @@
+<snippet>
+	<content><![CDATA[
+\documentclass[11]{amsart}
+\usepackage{ctex}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{xca}[theorem]{Exercise}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\numberwithin{equation}{section}
+
+\begin{document}
+
+\title{$1}
+
+%author one information
+\author{${2:Lu Haibo}}
+\address{$3}
+\curraddr{}
+\email{${4:luhaibo1985@gmail.com}}
+\thanks{$5}
+
+%author two information
+%\author{}
+%\address{}
+%\curraddr{}
+%\email{}
+%\thanks{}
+
+\subjclass[2010]{$6}
+
+\keywords{$7}
+
+\date{${8:\today}}
+
+%\dedicatory{}
+
+\begin{abstract}
+$9
+\end{abstract}
+
+\maketitle
+
+\section{${10:Introduction}} % (fold)
+\label{sec:${10:Introduction}}
+
+% section: ${10:Introduction} (end)
+
+%\bibliographystyle{}
+\bibliography{$11}
+\end{document}
+]]></content>
+	<tabTrigger>amsart</tabTrigger>
+	<scope>text.tex.latex</scope>
+</snippet>

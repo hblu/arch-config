@@ -1,0 +1,164 @@
+background no
+use_xft yes
+xftfont Zekton:size=8
+
+use_spacer top_right
+
+# Update interval in seconds
+update_interval 1
+
+# This is the number of times Conky will update before quitting.
+# Set to zero to run forever.
+total_run_times 0
+
+# Create own window instead of using desktop (required in nautilus)
+own_window  yes
+own_window_transparent yes
+own_windows_type desktop
+own_window_hints below,undecorate,sticky,skip_taskbar
+
+# Use double buffering (reduces flicker, may not work for everyone)
+double_buffer yes
+
+# Minimum size of text area
+#minimum_size 280 5
+
+minimum_size 150 5
+maximum_width 150
+
+
+# Draw shades?
+draw_shades no
+
+# Draw outlines?
+draw_outline no
+
+# Draw borders around text
+draw_borders no
+
+# Stippled borders?
+stippled_borders 0
+
+# border margins
+border_margin 5
+
+# border width
+border_width 0
+
+# Default colors and also border colors
+default_color 4d4d4d
+#default_shade_color white
+#default_outline_color black
+own_window_colour 262626
+
+# Text alignment, other possible values are commented
+#alignment top_left
+alignment top_right
+#alignment bottom_left
+#alignment bottom_right
+
+# Gap between borders of screen and text
+# same thing as passing -x at command line
+gap_x 5
+gap_y 0
+
+# Subtract file system buffers from used memory?
+no_buffers yes
+
+# set to yes if you want all text to be in uppercase
+uppercase no
+
+# number of cpu samples to average
+# set to 1 to disable averaging
+cpu_avg_samples 2
+
+# number of net samples to average
+# set to 1 to disable averaging
+net_avg_samples 2
+
+# Force UTF8? note that UTF8 support required XFT
+override_utf8_locale yes
+
+# Add spaces to keep things from moving about?  This only affects certain objects.
+use_spacer yes
+
+TEXT
+${voffset -40}
+${color 1692D0}${alignc -10}${font OpenLogos:size=50}
+##################
+####   TIME   ####
+##################
+${voffset 8}${color FF6600}${font caviar dreams:size=16}${time %A}${font}${voffset -8}${alignr 50}${color FFFFFF}${font caviar dreams:size=38}${time %e}${font}
+${color FFFFFF}${voffset -30}${color FFFFFF}${font caviar dreams:size=18}${time %b}${font}${voffset -3} ${color FFFFFF}${font caviar dreams:size=20}${time %Y}${font}${color FF6600}${hr}
+##################
+###   SYSTEM   ###
+##################
+
+${color 7C96B0}Kernel:${color 8F8F8F}${alignr}$kernel
+${color 7C96B0}UpTime:${color 8F8F8F}${alignr}$uptime
+##################
+####   CPU   #####
+##################
+${color 7C96B0}Core One:${color 8F8F8F}${alignr}${cpu cpu1}% ${color EE6363}
+${color 7C96B0}Core 1 temp:${color EE6363}${alignr}${execi 5 sensors | grep 'Core 0' | awk '{print $3}' | sed 's/+//' | sed 's/\.0//g'}
+${color 262626}${cpugraph cpu1 8,150 262626 EE6363}
+${color 7C96B0}Core Two:${color 8F8F8F}${alignr}${cpu cpu2}% ${color EE6363}
+${color 7C96B0}Core 2 temp:${color EE6363}${alignr}${execi 5 sensors | grep 'Core 1' | awk '{print $3}' | sed 's/+//' | sed 's/\.0//g'}
+${color 262626}${cpugraph cpu2 8,150 262626 EE6363}
+${color 7C96B0}Ram:${color 8F8F8F}${alignr}$mem
+${color 1A1A1A}${membar 8,150}
+##################
+###  NETWORK  ####
+##################
+${if_up wlp3s0}
+${color 98AE68}${font Zekton:size=8}UpSpeed:${font}${color EE6363}${alignr}${upspeed wlp3s0}/s
+${color 262626}${upspeedgraph wlp3s0 8,150 1E1E1E 1A1A1A}
+${color 7C96B0}Total: ${color 8F8F8F}${totalup wlp3s0}
+${color 98AE68}${font Zekton:size=8}DownSpeed:${font}${color EE6363}${alignr}${downspeed wlp3s0}/s
+${color 262626}${downspeedgraph wlp3s0 8,150 1E1E1E 1A1A1A}
+${color 7C96B0}Total: ${color 8F8F8F}${totaldown wlp3s0}
+${else}${if_up wlp0s20u2}
+${color 98AE68}${font Zekton:size=8}UpSpeed:${font}${color EE6363}${alignr}${upspeed wlp0s20u2}/s
+${color 262626}${upspeedgraph wlp0s20u2 8,150 1E1E1E 1A1A1A}
+${color 7C96B0}Total: ${color 8F8F8F}${totalup wlp0s20u2}
+${color 98AE68}${font Zekton:size=8}DownSpeed:${font}${color EE6363}${alignr}${downspeed wlp0s20u2}/s
+${color 262626}${downspeedgraph wlp0s20u2 8,150 1E1E1E 1A1A1A}
+${color 7C96B0}Total: ${color 8F8F8F}${totaldown wlp0s20u2}
+# |--enp2s0
+${else}{if_up enp2s0}
+${color 98AE68}${font Zekton:size=8}UpSpeed:${font}${color EE6363}${alignr}${upspeed enp2s0}/s
+${color 262626}${upspeedgraph enp2s0 8,150 1E1E1E 1A1A1A}
+${color 7C96B0}Total: ${color 8F8F8F}${totalup enp2s0}
+${color 98AE68}${font Zekton:size=8}DownSpeed:${font}${color EE6363}${alignr}${downspeed enp2s0}/s
+${color 262626}${downspeedgraph enp2s0 8,150 1E1E1E 1A1A1A}
+${color 7C96B0}Total: ${color 8F8F8F}${totaldown enp2s0}
+${else}
+${color EE6363}${font Zekton:size=12}LAN DOWN
+${endif}${endif}${endif}
+##################
+##  PROGCESSES  ##
+##################
+${color 7C96B0}Processes $stippled_hr
+${color 7C96B0}NAME             ${goto 70}CPU%${goto 115}MEM%
+${color 7C96B0}${top name 1}    ${goto 70}${top cpu 1}${goto 115}${top mem 1}
+${color 7C96B0}${top name 2}    ${goto 70}${top cpu 2}${goto 115}${top mem 2}
+${color 7C96B0}${top name 3}    ${goto 70}${top cpu 3}${goto 115}${top mem 3}
+${color 7C96B0}${top name 4}    ${goto 70}${top cpu 4}${goto 115}${top mem 4}
+${color 7C96B0}${top name 5}    ${goto 70}${top cpu 5}${goto 115}${top mem 5}
+##################
+# - CN WEATHER - #
+##################
+# http://www.weather.com.cn/
+
+
+${voffset -10}${font WenQuanYi Micro Hei:style=Bold:size=8}天气预报 $stippled_hr${font}
+
+
+${execi 600 curl -s --connect-timeout 30 "http://m.weather.com.cn/data/101020100.html" >/tmp/forcast }${execi 600 curl -s --connect-timeout 30 "http://wap.weather.com.cn/data/sk/101020100.html" >/tmp/current }
+${voffset -22}${goto 35}${execi 600 sed  's/^.*"city":"//' /tmp/current | sed 's/",".*$//' }: ${execi 600 sed  's/^.*"img_title_single":"//' /tmp/forcast | sed 's/",".*$//' } ${alignr}湿度：${execi 600 sed  's/^.*"SD":"//' /tmp/current | sed 's/",".*$//' } 
+${voffset 0}${goto 35}${execi 600 sed  's/^.*"WD":"//' /tmp/current | sed 's/",".*$//' } ${execi 600 sed  's/^.*"WS":"//' /tmp/current | sed 's/",".*$//' } ${alignr}${execbar sed  's/^.*"SD":"//' /tmp/current | sed 's/",".*$//'}${font}
+${voffset 5}${font ConkyWeather:size=24}E${font}
+${voffset -35}${goto 32}${font WenQuanYi Micro Hei:size=8}今日: ${execi 600 sed  's/^.*"temp":"//' /tmp/current | sed 's/",".*$//' }°C ${alignr}${execi 600 sed  's/^.*"temp1":"//' /tmp/forcast | sed 's/",".*$//' | sed 's/℃//'| sed 's/℃/°C/' }
+${goto 32}${font WenQuanYi Micro Hei:size=8}明日: ${execi 600 sed  's/^.*"weather2":"//' /tmp/forcast | sed 's/",".*$//' } ${alignr}${execi 600 sed  's/^.*"temp2":"//' /tmp/forcast | sed 's/",".*$//' | sed 's/℃//'| sed 's/℃/°C/'}${font}
+${goto 32}${font WenQuanYi Micro Hei:size=8}后日: ${execi 600 sed  's/^.*"weather3":"//' /tmp/forcast | sed 's/",".*$//' } ${alignr}${execi 600 sed  's/^.*"temp3":"//' /tmp/forcast | sed 's/",".*$//' | sed 's/℃//'| sed 's/℃/°C/' }${font}
+#######################################

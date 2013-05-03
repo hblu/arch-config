@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openbox_menu>
+	<menu id="root-menu" label="OpenBox 3">
+			<item label="Run">
+				<action name="Execute">
+					<execute>gmrun</execute>
+				</action>
+			</item>
+		<separator/>
+		<menu id="5" label="Network">
+			<item label="WoW">
+				<action name="Execute">
+					<execute>wine /mnt/e/wow/Wow-64.exe</execute>
+				</action>
+			</item>
+			<item label="Liferea">
+				<action name="Execute">
+					<execute>liferea</execute>
+				</action>
+			</item>
+			<item label="Fire Fox">
+				<action name="Execute">
+					<execute>firefox</execute>
+				</action>
+			</item>
+			<item label="Skype">
+				<action name="Execute">
+					<execute>skype</execute>
+				</action>
+			</item>
+			<item label="Dropbox">
+				<action name="Execute">
+					<execute>dropboxd</execute>
+				</action>
+			</item>
+		</menu>
+		<menu id="3" label="Office">
+			<item label="InkScape">
+				<action name="Execute">
+					<execute>inkscape</execute>
+				</action>
+			</item>
+			<item label="Kingsoft Writer">
+				<action name="Execute">
+					<execute>wps</execute>
+				</action>
+			</item>
+			<item label="Kingsoft Presentation">
+				<action name="Execute">
+					<execute>wpp</execute>
+				</action>
+			</item>
+			<item label="Kingsoft Spreadsheet">
+				<action name="Execute">
+					<execute>et</execute>
+				</action>
+			</item>
+			<item label="Sublime Text 2">
+				<action name="Execute">
+					<execute>/opt/sublime-text/sublime_text</execute>
+				</action>
+			</item>
+			<item label="The GIMP">
+				<action name="Execute">
+					<execute>gimp</execute>
+				</action>
+			</item>
+		</menu>
+		<menu id="8" label="Education">
+			<item label="Mendeley Desktop">
+				<action name="Execute">
+					<execute>mendeleydesktop</execute>
+				</action>
+			</item>
+			<item label="Zim">
+				<action name="Execute">
+					<execute>zim</execute>
+				</action>
+			</item>
+		</menu>
+		<menu id="7" label="Multimedia">
+			<item label="DeaDBeeF">
+				<action name="Execute">
+					<execute>deadbeef</execute>
+				</action>
+			</item>
+			<item label="SMPlayer">
+				<action name="Execute">
+					<execute>smplayer</execute>
+				</action>
+			</item>
+		</menu>
+		<menu id="37" label="System">
+			<item label="Bleachbit">
+				<action name="Execute">
+					<execute>bleachbit</execute>
+				</action>
+			</item>
+			<menu id="36" label="Settings">
+				<menu id="21" label="GNOME">
+					<item label="Adobe Flash Player">
+						<action name="Execute">
+							<execute>flash-player-properties</execute>
+						</action>
+					</item>
+					<item label="Network Connections">
+						<action name="Execute">
+							<execute>nm-connection-editor</execute>
+						</action>
+					</item>
+					<item label="Privilege granting">
+						<action name="Execute">
+							<execute>gksu-properties</execute>
+						</action>
+					</item>
+				</menu>
+				<menu id="35" label="Xfce">
+					<item label="Notifications">
+						<action name="Execute">
+							<execute>xfce4-notifyd-config</execute>
+						</action>
+					</item>
+				</menu>
+
+				<item label="KDE System Settings">
+					<action name="Execute">
+						<execute>systemsettings</execute>
+					</action>
+				</item>
+				<item label="Monitor Settings">
+					<action name="Execute">
+						<execute>lxrandr</execute>
+					</action>
+				</item>
+
+			</menu>
+		</menu>
+		<separator/>
+		<menu id="client-list-menu"/>
+		<menu id="40" label="OpenBox Config">
+			<item label="Logout">
+			<action name="SessionLogout"/>
+			</item>
+			<item label="Reconfigure">
+				<action name="Reconfigure"/>
+			</item>
+				<item label="Lxappearance">
+					<action name="Execute">
+						<execute>lxappearance</execute>
+					</action>
+				</item>
+				<item label="Openbox Configuration Manager">
+					<action name="Execute">
+						<execute>obconf</execute>
+					</action>
+				</item>
+				<item label="Desktop Preferences">
+					<action name="Execute">
+						<execute>pcmanfm --desktop-pref</execute>
+					</action>
+				</item>
+				<separator/>
+				<item label="Edit Menu">
+					<action name="Execute">
+						<execute>subl /home/lhb/.config/openbox/menu.xml</execute>
+					</action>
+				</item>
+				<item label="Edit Shortkey">
+					<action name="Execute">
+						<execute>subl /home/lhb/.config/openbox/rc.xml</execute>
+					</action>
+				</item>
+				<item label="Edit Tint2">
+					<action name="Execute">
+						<execute>subl /home/lhb/.config/tint2/tint2rc</execute>
+					</action>
+				</item>
+		</menu>
+		<separator/>
+		<item label="Reboot">
+			<action name="Execute">
+   	 		<prompt>Are you sure you want to REBOOT the computer!?</prompt>
+   			 <startupnotify>
+      			 <enabled>yes</enabled>
+      			 <name>Reboot</name>
+    		        <wmclass>reboot</wmclass>
+    			 </startupnotify>
+			 <execute>shutdown -r now</execute>
+			 </action>
+		</item>
+		<item label="Shutdown">
+			<action name="Execute">
+   	 		<prompt>Are you sure you want to SHUTDOWN the computer!?</prompt>
+   			 <startupnotify>
+      			 <enabled>yes</enabled>
+      			 <name>Shutdown</name>
+    		        <wmclass>shutdown</wmclass>
+    			 </startupnotify>
+			 <execute>shutdown -h now</execute>
+			 </action>
+		</item>
+		<item label="Suspend">
+			<action name="Execute">
+   	 		<prompt>Are you sure you want to SUSPEND the computer!?</prompt>
+   			 <startupnotify>
+      			 <enabled>yes</enabled>
+      			 <name>Suspend</name>
+    		        <wmclass>suspend</wmclass>
+    			 </startupnotify>
+			 <execute>sudo pm-suspend</execute>
+			 </action>
+		</item>
+		<item label="Hibernate">
+			<action name="Execute">
+   	 		<prompt>Are you sure you want to HIBERNATE the computer!?</prompt>
+   			 <startupnotify>
+      			 <enabled>yes</enabled>
+      			 <name>Hibernate</name>
+    		        <wmclass>hibernate</wmclass>
+    			 </startupnotify>
+			 <execute>sudo pm-hibernate</execute>
+			 </action>
+		</item>
+	</menu>
+</openbox_menu>

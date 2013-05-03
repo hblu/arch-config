@@ -1,0 +1,36 @@
+#
+# These things are run when an Openbox X Session is started.
+# You may place a similar script in $HOME/.config/openbox/autostart
+# to run user-specific things.
+#
+
+# If you want to use GNOME config tools...
+#
+#if test -x /usr/lib/openbox/gnome-settings-daemon >/dev/null; then
+#  /usr/lib/openbox/gnome-settings-daemon &
+#elif which gnome-settings-daemon >/dev/null 2>&1; then
+#  gnome-settings-daemon &
+#fi
+
+# If you want to use XFCE config tools...
+#
+#xfce-mcs-manager &
+#feh --bg-scale /home/lhb/picture/Wallpaper/1.jpg &
+####################
+if which feh >/dev/null 2>&1; then
+  # eval `cat $HOME/.fehbg` &
+  WALLPAPERS="$HOME/picture/Wallpaper"
+  ALIST=( `ls -w1 $WALLPAPERS` )
+  RANGE=${#ALIST[*]}
+  SHOW=$(( $RANDOM % $RANGE ))
+ 
+  feh --bg-scale $WALLPAPERS/${ALIST[$SHOW]}
+fi
+####################
+killall conky > /dev/null 2>&1  
+conky &
+(sleep 3 && /usr/bin/nm-applet --sm-disable) &
+killall tint2 > /dev/null 2>&1  
+tint2 -c /home/lhb/.config/tint2/tint2rc  &
+
+synclient TouchpadOff=1 &

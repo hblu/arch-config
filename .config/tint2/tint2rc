@@ -1,0 +1,111 @@
+#---------------------------------------------
+# TINT2 CONFIG FILE
+#---------------------------------------------
+
+#---------------------------------------------
+# BACKGROUND AND BORDER
+#---------------------------------------------
+
+# The whole row
+rounded = 0
+border_width = 1
+background_color = #eeeeee 100
+border_color = #bbbbbb 100
+
+# Active taskbar item
+rounded = 2
+border_width = 1
+background_color = #dddddd 100
+border_color = #bbbbbb 100
+
+# Inactive taskbar items
+rounded = 2
+border_width = 1
+background_color = #ffffff 100
+border_color = #bbbbbb 100
+
+#---------------------------------------------
+# PANEL
+#---------------------------------------------
+panel_items = LTSBC
+panel_monitor = all
+panel_position = bottom center
+panel_size = 100% 30
+panel_margin = 0 0
+panel_padding = 7 0
+font_shadow = 0
+panel_background_id = 1
+
+# Launchers
+launcher_icon_theme = LinuxLex-8
+launcher_padding = 5 0 10
+launcher_background_id = 9
+launcher_icon_size = 85
+launcher_item_app = /usr/share/applications/mendeleydesktop.desktop
+launcher_item_app = /usr/share/applications/chromium.desktop
+launcher_item_app = /usr/share/applications/skype.desktop
+#---------------------------------------------
+# TASKBAR
+#---------------------------------------------
+taskbar_mode = single_monitor
+taskbar_padding = 2 3 2
+taskbar_background_id = 0
+
+#---------------------------------------------
+# TASKS
+#---------------------------------------------
+task_icon = 1
+task_text = 1
+task_width = 140
+task_centered = 1
+task_padding = 6 3
+task_font = sans 10
+task_font_color = #000000 100
+task_active_font_color = #000000 100
+task_background_id = 3
+task_active_background_id = 2
+
+#---------------------------------------------
+# SYSTRAYBAR
+#---------------------------------------------
+systray = 1
+systray_padding = 0 4 5
+systray_background_id = 0
+systray_sort = left2right
+systray_icon_size = 0
+systray_icon_asb = 100 0 0
+
+
+#---------------------------------------------
+# BATTERY
+#---------------------------------------------
+battery = 1
+battery_hide = 58
+battery_low_status = 10
+battery_low_cmd = notify-send "battery low"
+bat1_font = sans 8
+bat2_font = sans 6
+battery_font_color = #000000 100
+#battery_padding = 1 0
+battery_background_id = 0
+
+
+#---------------------------------------------
+# CLOCK
+#---------------------------------------------
+#time1_format = %F %a  %l:%M %P
+time1_format = %l:%M %P
+time1_font = sans 10
+#time2_format =
+#time2_font = sans 6
+clock_font_color = #000000 100
+#clock_padding = 1 1
+clock_background_id = 0
+
+#---------------------------------------------
+# MOUSE ACTION ON TASK
+#---------------------------------------------
+mouse_middle = none
+mouse_right = close
+mouse_scroll_up = toggle
+mouse_scroll_down = iconify

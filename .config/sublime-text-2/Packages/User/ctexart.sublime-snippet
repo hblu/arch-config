@@ -1,0 +1,73 @@
+<snippet>
+	<content><![CDATA[
+\documentclass[UTF8,a4paper,cs4size,fancyhdr]{ctexart}
+\usepackage[ocgcolorlinks]{hyperref}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{color}
+\usepackage{indentfirst}
+\usepackage{latexsym,bm}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{cases}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{emptypage}
+\usepackage{titlesec}
+\usepackage{titletoc}
+\usepackage[small]{caption}
+
+\begin{document}
+\CTEXspace
+%\addtolength{\parinddent}{2em plus 1em minus 1em]
+%======================= 标题名称中文化 ==========================%
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{xca}[theorem]{Exercise}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\numberwithin{equation}{section}
+\renewcommand{\proofname}{{\heiti 证}}
+\renewcommand*{\qedsymbol}{[证毕]}
+
+\newcommand{\dif}{\,\mathrm{d}}%直立的微分符号 "d"
+\newcommand{\me}{\mathrm{e}}%直立的自然指数 "e"
+\renewcommand{\C}{\mathbb{C}}%黑正体复数域
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}%黑正体实数域
+\newcommand{\N}{\mathbb{N}}%黑正体自然数域
+\renewcommand{\B}{\mathcal{B}}
+\renewcommand{\i}{\mathrm{i}}
+\renewcommand{\O}{\mathcal{O}}
+\renewcommand{\o}{{o}}
+
+
+\title{$1}
+\author{\zihao{5}{${2:Lu Haibo}}}
+\date{\zihao{5}{${3:\today}}}
+
+\maketitle
+
+\begin{abstract}
+$4
+\end{abstract}
+
+\section{${5:引言}} % (fold)
+\label{sec:${5:引言}}
+
+% section: ${5:引言} (end)
+
+
+
+%\bibliographystyle{GBT7714-2005NLang-UTF8}
+%\setlength{\bibsep}{0.5ex}
+%\bibliography{}
+
+\end{document}
+]]></content>
+	<tabTrigger>ctexart</tabTrigger>
+	<scope>text.tex.latex</scope>
+</snippet>
