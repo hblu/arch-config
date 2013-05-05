@@ -88,8 +88,8 @@ ${color 1692D0}${alignc -10}${font OpenLogos:size=50}
 ##################
 ####   TIME   ####
 ##################
-${voffset 8}${color FF6600}${font caviar dreams:size=16}${time %A}${font}${voffset -8}${alignr 50}${color FFFFFF}${font caviar dreams:size=38}${time %e}${font}
-${color FFFFFF}${voffset -30}${color FFFFFF}${font caviar dreams:size=18}${time %b}${font}${voffset -3} ${color FFFFFF}${font caviar dreams:size=20}${time %Y}${font}${color FF6600}${hr}
+${voffset 8}${color FF6600}${font WenQuanYi Micro Hei:style=Bold:size=16}${time %A}${font}${voffset -8}${alignr 50}${color FFFFFF}${font WenQuanYi Micro Hei:style=Bold:size=38}${time %e}${font}
+${color FFFFFF}${voffset -30}${color FFFFFF}${font WenQuanYi Micro Hei:style=Bold:size=18}${time %b}${font}${voffset -3} ${color FFFFFF}${font WenQuanYi Micro Hei:style=Bold:size=20}${time %Y}${font}${color FF6600}${hr}
 ##################
 ###   SYSTEM   ###
 ##################
@@ -154,7 +154,7 @@ ${color 7C96B0}${top name 5}    ${goto 70}${top cpu 5}${goto 115}${top mem 5}
 ${voffset -10}${font WenQuanYi Micro Hei:style=Bold:size=8}天气预报 $stippled_hr${font}
 
 
-${execi 600 curl -s --connect-timeout 30 "http://m.weather.com.cn/data/101020100.html" >/tmp/forcast }${execi 600 curl -s --connect-timeout 30 "http://wap.weather.com.cn/data/sk/101020100.html" >/tmp/current }
+${font WenQuanYi Micro Hei:style=Bold:size=8}${execi 600 curl -s --connect-timeout 30 "http://m.weather.com.cn/data/101020100.html" >/tmp/forcast }${execi 600 curl -s --connect-timeout 30 "http://wap.weather.com.cn/data/sk/101020100.html" >/tmp/current }
 ${voffset -22}${goto 35}${execi 600 sed  's/^.*"city":"//' /tmp/current | sed 's/",".*$//' }: ${execi 600 sed  's/^.*"img_title_single":"//' /tmp/forcast | sed 's/",".*$//' } ${alignr}湿度：${execi 600 sed  's/^.*"SD":"//' /tmp/current | sed 's/",".*$//' } 
 ${voffset 0}${goto 35}${execi 600 sed  's/^.*"WD":"//' /tmp/current | sed 's/",".*$//' } ${execi 600 sed  's/^.*"WS":"//' /tmp/current | sed 's/",".*$//' } ${alignr}${execbar sed  's/^.*"SD":"//' /tmp/current | sed 's/",".*$//'}${font}
 ${voffset 5}${font ConkyWeather:size=24}E${font}
